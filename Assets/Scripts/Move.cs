@@ -22,7 +22,7 @@ public class Move : MonoBehaviour
 
     public void Jump()
     {
-        rb.velocity = new Vector2(0, JumpIntensity);
+        rb.velocity = new Vector2(rb.velocity.x, JumpIntensity);
     }
 
     // Update is called once per frame
