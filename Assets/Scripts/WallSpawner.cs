@@ -11,8 +11,6 @@ public class WallSpawner : MonoBehaviour
     [SerializeField]
     public float spawnRate = 2f;
 
-    public ObjectPooler objectPooler;
-
     private IEnumerator spawnCoroutine()
     {
         while (true)
@@ -28,6 +26,7 @@ public class WallSpawner : MonoBehaviour
 
     public void SpawnWall()
     {
+        Debug.Log(ObjectPooler.Instance);
         ObjectPooler.Instance.SpawnFromPool("Wall", new Vector3(10, Random.Range(-3f, 3f), 0), Quaternion.identity);
     }
 }

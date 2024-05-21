@@ -18,10 +18,6 @@ namespace DefaultNamespace
             {
                 Instance = this;
             }
-        }
-
-        private void Start()
-        {
             pool = new GameObject[poolSize];
             for (int i = 0; i < poolSize; i++)
             {
@@ -32,9 +28,11 @@ namespace DefaultNamespace
 
         public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
         {
-
+            Debug.Log("Spawning " + tag);
+            Debug.Log(pool);
             for (int i = 0; i < poolSize; i++)
             {
+                Debug.Log(pool[i]);
                 if (!pool[i].activeInHierarchy && pool[i].tag == tag)
                 {
                     pool[i].SetActive(true);
